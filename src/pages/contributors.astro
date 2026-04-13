@@ -6,12 +6,12 @@ import PageHeader from "../components/PageHeader.astro";
 ---
 
 <Layout title="Contributors">
-    <main>
-        <PageHeader title="Contributors" />
-        <PageContent>
-        	<LongFormContent>
-	        	<p class="bio" id="cynthia-browne">
-		        	<b>Cynthia Browne</b> is a Research Scholar at the Max Planck Institute for History of Science, where she currently leads
+	<main>
+		<PageHeader title="Contributors" />
+		<PageContent>
+			<LongFormContent>
+				<p class="bio" id="cynthia-browne">
+					<b>Cynthia Browne</b> is a Research Scholar at the Max Planck Institute for History of Science, where she currently leads
 					the working group “Troubling Exposure.” The group, as well as Browne’s research, examines exposure as a documentary practice
 					that has been foundational to certain forms of environmental knowledge, as well as integral to counter-documentary practices
 					that work to disclose how trajectories of environmental exposure intersect with legacies and infrastructures of colonialism
@@ -93,13 +93,41 @@ import PageHeader from "../components/PageHeader.astro";
 					research is on the afterlives of Ndungu Agricultural Project in Kilimanjaro, Tanzania, with a major focus on pesticide
 					use and its effects on health and environment.
 				</p>
-        	</LongFormContent>
-        </PageContent>
-    </main>
+			</LongFormContent>
+
+			<div class="logos-block">
+				<div class="logo">
+					<img src="/images/logos/image001.png" alt="Arts and Humanities Research Council" />
+				</div>
+				<div class="logo">
+					<img src="/images/logos/MPI_WG_wide_E_grey.png" alt="Max Planck Institute for the History of Science" />
+				</div>
+			</div>
+		</PageContent>
+	</main>
 </Layout>
 
 <style>
 p.bio {
 	margin-bottom: 4rem;
+}
+
+.logos-block {
+	align-items: center;
+	column-gap: 2rem;
+	display: flex;
+	justify-content: center;
+	margin-top: 8rem;
+}
+
+@media all and (max-width: 700px) {
+	.logos-block {
+		flex-direction: column;
+		row-gap: 4rem;
+	}
+}
+
+.logos-block img {
+	max-height: 60px;
 }
 </style>
