@@ -1,0 +1,30 @@
+name: Auto PR from content
+
+on:
+  push:
+    branches: [content]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          # Check if an open PR already exists
+          EXISTING=$(gh pr list --head content --base main --state open --json number --jq '.[0].number')
+          if [ -z "$EXISTING" ]; then
+            gh pr create \
+              --title "Content update" \
+              --body "Automated PR from content branch." \
+              --base main \
+              --head content
+            echo "Created new PR"
+          else
+            echo "PR #$EXISTING already open, skipping"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
