@@ -6,6 +6,7 @@ import EssayImage from "../../components/EssayImage.astro";
 import LongFormContent from "../../components/LongFormContent.astro";
 import PageContent from "../../components/PageContent.astro";
 import PageHeader from "../../components/PageHeader.astro";
+import { withBase } from "../../lib/base";
 
 const locationTag = "The Gaza Strip, Palestine";
 const title = "Cultivating an Ancient Soil: Sub-dune Histories and Ecologies";
@@ -608,7 +609,7 @@ const authorSlug = "dotan-halevy";
 						‘Analysis of Ownership and Occupation of the Coastal Sands Dunes Extended from Jaffa to Rafah’, 1945, 1945, מ-22/2, ISA [129]. <a class="return-from-note" href="#note-ref-29">&crarr;</a>
 					</li>
 					<li id="note-30">
-						Bunton 2007: 36–37, 43–44; On the concept of Mawat, see also in <i>Grasping Soil</i>, <a href="/units/4-soil-as-belonging#day-3">‘Unit 4: Soil as Belonging’, Soil as Property and Properties of Soil</a>. <a class="return-from-note" href="#note-ref-30">&crarr;</a>
+						Bunton 2007: 36–37, 43–44; On the concept of Mawat, see also in <i>Grasping Soil</i>, <a href={withBase('/units/4-soil-as-belonging#day-3')}>‘Unit 4: Soil as Belonging’, Soil as Property and Properties of Soil</a>. <a class="return-from-note" href="#note-ref-30">&crarr;</a>
 					</li>
 					<li id="note-31">
 						Halevy 2023: 537–64. <a class="return-from-note" href="#note-ref-31">&crarr;</a>

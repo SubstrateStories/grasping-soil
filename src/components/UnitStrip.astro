@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/base';
+
 const {
     unit,
     imageSrc,
@@ -8,11 +10,11 @@ const {
 <div class={`unit-strip unit-${unit}`}>
     <div class="contents">
         <div class="overlay">
-            <a href="/" class="home-badge">
+            <a href={withBase('/')} class="home-badge">
                 GS
             </a>
         </div>
-        <img src={imageSrc} alt={imageAlt} />
+        <img src={withBase(imageSrc)} alt={imageAlt} />
     </div>
 </div>
 

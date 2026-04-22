@@ -1,22 +1,23 @@
 <script>
+    import { withBase } from '../lib/base';
     export let unit;
     export let title;
     export let path;
 </script>
-<a href={path} class="button">
+<a href={withBase(path)} class="button">
     <span class="label-position">
         <span class="label">{unit}. {title}</span>
     </span>
     <img
         role="presentation"
         class="color-overlay"
-        src={`/images/unit-${unit}/banner.jpg`}
+        src={withBase(`/images/unit-${unit}/banner.jpg`)}
         alt=""
     />
     <img
         role="presentation"
         class="fade-underlay"
-        src={`/images/unit-${unit}/banner-fade.png`}
+        src={withBase(`/images/unit-${unit}/banner-fade.png`)}
         alt=""
     />
 </a>

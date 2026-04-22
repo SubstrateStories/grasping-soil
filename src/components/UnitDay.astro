@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/base';
+
 const {
     unit,
     day,
@@ -13,7 +15,7 @@ const {
                         class="illustration"
                         aria-role="presentation"
                         alt=""
-                        src={`/images/unit-${unit}/day-${day}-color.jpg`}
+                        src={withBase(`/images/unit-${unit}/day-${day}-color.jpg`)}
                 />
             </div>
             <div class="text-block">

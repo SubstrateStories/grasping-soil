@@ -1,6 +1,7 @@
 <script>
     import {onMount} from 'svelte';
     import IllustratedUnitButton from "./IllustratedUnitButton.svelte";
+    import { withBase } from '../lib/base';
 
     let scrollY;
     let container;
@@ -103,7 +104,7 @@
             style={bannerStyle}
     >
         <div class="banner-content">
-            <img src="/images/homepage-banner.jpg" width="1440" height="486" alt=""/>
+            <img src={withBase('/images/homepage-banner.jpg')} width="1440" height="486" alt=""/>
         </div>
     </div>
 
@@ -113,7 +114,7 @@
             <h1 class="title" bind:this={title}>Grasping Soil</h1>
 
             <div class="intro-links">
-                a <a class="syllabus-link" href="/syllabus">syllabus</a> + <a class="essays-link" href="/essays">essays</a>
+                a <a class="syllabus-link" href={withBase('/syllabus')}>syllabus</a> + <a class="essays-link" href={withBase('/essays')}>essays</a>
             </div>
             <div class="horizontal-stars">
                 {#if starSvg}
@@ -141,7 +142,7 @@
                     Even if actual soil might be invisible in your everyday routines, once you’re attuned to it, you might start
                     noticing that a language and imagery of it pervades political and cultural life. As you explore the syllabus
                     you will find links here to books, articles, videos, and art. Please enjoy discovering new things! But beyond
-                    being a repository of links, <a href="/contributors">we</a> have sought to create a syllabus that can actually
+                    being a repository of links, <a href={withBase('/contributors')}>we</a> have sought to create a syllabus that can actually
                     be taught (or self-taught), including assignments, discussion questions, writing prompts and forays out into
                     the world to actually touch soil. As a collective endeavor, there is a delightful and inevitable patchiness to
                     the final product. Not every section of the syllabus has the same voice and different units might be pitched to different learners.
@@ -154,7 +155,7 @@
                 </p>
                 <p>
                     As you explore the syllabus, you will also find links to our essays along the way, which you can also find
-                    <a href="/essays">here</a>. The essays, based on our research interests, explore moments where soil is
+                    <a href={withBase('/essays')}>here</a>. The essays, based on our research interests, explore moments where soil is
                     both the subject at hand (being assessed, amended, removed, etc) and the vehicle for remaking politics, health,
                     ideas of home and belonging as well as visions of the future.
                 </p>
@@ -171,7 +172,7 @@
 
     <footer bind:this={footer}>
         <p>
-            &copy; {(new Date().getFullYear())} / <a href="/colophon">Colophon</a>
+            &copy; {(new Date().getFullYear())} / <a href={withBase('/colophon')}>Colophon</a>
         </p>
     </footer>
 </div>

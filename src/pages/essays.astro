@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
+import { withBase } from "../lib/base";
 ---
 
 <Layout title="Essays">
@@ -8,69 +9,69 @@ import PageHeader from "../components/PageHeader.astro";
 		<PageHeader title="Essays" />
 		<ul>
 			<li>
-				<a href="/essays/introduction">
+				<a href={withBase('/essays/introduction')}>
 					<span class="title">Introduction</span>
 					<span class="byline">Emily Brownell</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/behaviour-instead-of-identity">
+				<a href={withBase('/essays/behaviour-instead-of-identity')}>
 					<span class="place">Ithaca, New York</span>
 					<span class="title">Behaviour instead of Identity: Functional Complexity of Organic Matter as an Organising Principle in Soil Ecosystems</span>
 					<span class="byline">Johannes Lehmann</span>
 				</a>
 			 </li>
 			<li>
-				<a href="/essays/the-fertility-of-the-soil-is-in-your-hand">
+				<a href={withBase('/essays/the-fertility-of-the-soil-is-in-your-hand')}>
 					<span class="place">British Mandate Palestine</span>
 					<span class="title">‘The Fertility of the Soil is in Your Hand’: On Manure and the Colonial Roots and Branches of the Organic Movement</span>
 					<span class="byline">Tamar Novick</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/building-roads-counting-worms">
+				<a href={withBase('/essays/building-roads-counting-worms')}>
 					<span class="place">Kwale District, Kenya</span>
 					<span class="title">Building Roads, Counting Worms: Soil as a Medium for Parasitic Relations</span>
 					<span class="byline">Emily Brownell</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/arsenic-cycles-through-racism-and-empire">
+				<a href={withBase('/essays/arsenic-cycles-through-racism-and-empire')}>
 					<span class="place">USA and Mexico</span>
 					<span class="title">Rings of Fire: Arsenic Cycles Through Racism and Empire</span>
 					<span class="byline">Jayson Maurice Porter</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/mountains-become-wasteland">
+				<a href={withBase('/essays/mountains-become-wasteland')}>
 					<span class="place">Appalachia, USA</span>
 					<span class="title">Mountains Become Wasteland</span>
 					<span class="byline">Steven Stoll</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/knowing-soil-as-a-living-thing-treating-it-as-a-living-body">
+				<a href={withBase('/essays/knowing-soil-as-a-living-thing-treating-it-as-a-living-body')}>
 					<span class="place">Ndungu, Tanzania</span>
 					<span class="title">Knowing Soil as a Living Thing, Treating it as a Non-Living Body: Contradictory Forms of Care</span>
 					<span class="byline">Lulu Tessua</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/punkt-null-an-ecological-substrate-begins-anew">
+				<a href={withBase('/essays/punkt-null-an-ecological-substrate-begins-anew')}>
 					<span class="place">Lusatia, Germany</span>
 					<span class="title">Punkt Null (Point Zero): An Ecological Substrate Begins Anew</span>
 					<span class="byline">Cynthia Browne</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/blood-over-soil">
+				<a href={withBase('/essays/blood-over-soil')}>
 					<span class="place">Berlin, the Cosmos</span>
 					<span class="title">Blood over Soil. Albert Speer’s Heavy Load-Bearing Cylinder, Glacial Till, and Racial Terra-Forming</span>
 					<span class="byline">Paul Kurek</span>
 				</a>
 			</li>
 			<li>
-				<a href="/essays/cultivating-an-ancient-soil">
+				<a href={withBase('/essays/cultivating-an-ancient-soil')}>
 					<span class="place">The Gaza Strip, Palestine</span>
 					<span class="title">Cultivating an Ancient Soil: Sub-dune Histories and Ecologies</span>
 					<span class="byline">Dotan Halevy</span>
