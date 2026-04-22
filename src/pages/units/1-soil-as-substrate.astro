@@ -1,5 +1,6 @@
 ---
 import UnitLayout from '../../layouts/UnitLayout.astro';
+import { withBase } from '../../lib/base';
 
 import ActivityBlock from '../../components/ActivityBlock.astro';
 import FormattedText from '../../components/FormattedText.astro';
@@ -240,7 +241,7 @@ const title = "Soil as Substrate (Or “the Matter of Soil”)";
                         Or listen a bit more about worms: <a href="https://www.podchaser.com/podcasts/soil-stories-with-nic-and-lean-1136307" target="_blank" rel="noopener noreferrer">Soil Stories with Nic and Leanna</a>
                     </li>
                     <li>
-                        See also Johannes Lehmann’s <a href="/essays/behaviour-instead-of-identity">essay</a>
+                        See also Johannes Lehmann’s <a href={withBase('/essays/behaviour-instead-of-identity')}>essay</a>
                     </li>
                 </MediaList>
 
@@ -289,7 +290,7 @@ const title = "Soil as Substrate (Or “the Matter of Soil”)";
                         of manufacturing waste.” (Landecker 2019). There are many places currently confronting the immense clean up
                         problems of dealing with PFAS in the environment and one of the most dramatic examples is Maine. The state of
                         Maine previously supported the re-use of wastewater sludge as fertilizer for rural farmsteads, but new forms of
-                        detection and knowledge concerning the harmful effects of exposure to PFAS for human health (see also <a href="/units/3-soil-as-health">Unit #3</a>)
+                        detection and knowledge concerning the harmful effects of exposure to PFAS for human health (see also <a href={withBase('/units/3-soil-as-health')}>Unit #3</a>)
                         has resulted in new environmental regulations.
                     </p>
                     <p>
@@ -346,7 +347,7 @@ const title = "Soil as Substrate (Or “the Matter of Soil”)";
                         Kennen, Kate, and Niall Kirkwood. 2015. “<a href="https://vdoc.pub/documents/phyto-principles-and-resources-for-site-remediation-and-landscape-design-15pn43v3p568" target="_blank" rel="noopener noreferrer">Site Programs and Land Use</a>.” In <i>Phyto</i>, 1st ed., 247–98. United Kingdom: Routledge.
                     </li>
                     <li>
-                        Cynthia Browne’s <a href="/essays/punkt-null-an-ecological-substrate-begins-anew">essay</a>
+                        Cynthia Browne’s <a href={withBase('/essays/punkt-null-an-ecological-substrate-begins-anew')}>essay</a>
                     </li>
                 </MediaList>
                 <h3>

@@ -1,5 +1,6 @@
 ---
 import UnitLayout from '../../layouts/UnitLayout.astro';
+import { withBase } from '../../lib/base';
 
 import ActivityBlock from '../../components/ActivityBlock.astro';
 import FormattedText from '../../components/FormattedText.astro';
@@ -276,7 +277,7 @@ const title = "Soil as Belonging";
                         Additional reading on colonial dispossession of land: Robert Nichols, <a href="https://cominsitu.wordpress.com/wp-content/uploads/2023/04/theft-is-property-book-nichols.pdf" target="_blank" rel="noopener noreferrer"><i>Theft is Property!</i></a>
                     </li>
                     <li>
-                        See also Dotan Halevy’s <a href="/essays/cultivating-an-ancient-soil">essay</a>
+                        See also Dotan Halevy’s <a href={withBase('/essays/cultivating-an-ancient-soil')}>essay</a>
                     </li>
                 </MediaList>
                 <h3>Unmaking Soil: How claims of erosion and harm are also used to dispossess</h3>
@@ -441,7 +442,7 @@ const title = "Soil as Belonging";
                             Eleanor Cummins, “<a href="https://www.theverge.com/c/23307867/human-composting-process-return-home" target="_blank" rel="noopener noreferrer">Inside one of the world’s first human composting facilities</a>,” <i>The Verge</i>
                         </li>
                         <li>
-                            See also Steven Stoll’s <a href="/essays/mountains-become-wasteland">essay</a>
+                            See also Steven Stoll’s <a href={withBase('/essays/mountains-become-wasteland')}>essay</a>
                         </li>
                     </MediaList>
                 </FormattedText>

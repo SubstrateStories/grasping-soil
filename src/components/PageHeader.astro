@@ -1,21 +1,23 @@
 ---
+import { withBase } from '../lib/base';
+
 const { title, skipH1, linkTo } = Astro.props;
 ---
 
 <div class="page-header">
-    <a href="/" class="home-badge">
+    <a href={withBase('/')} class="home-badge">
         GS
     </a>
     <div class="image-clipper">
-        <img src="/images/hero.jpg" alt="illustration depicting layers of soil with roots and human artifacts interpersed and people working the surface" />
+        <img src={withBase('/images/hero.jpg')} alt="illustration depicting layers of soil with roots and human artifacts interpersed and people working the surface" />
     </div>
     {title && (
 	    <div class="text-overlay">
 	        <div class="title">
 				{skipH1 ? (
-					<p>{linkTo ? <a href={linkTo}>{title}</a> : title}</p>
+					<p>{linkTo ? <a href={withBase(linkTo)}>{title}</a> : title}</p>
 				) : (
-					<h1>{linkTo ? <a href={linkTo}>{title}</a> : title}</h1>
+					<h1>{linkTo ? <a href={withBase(linkTo)}>{title}</a> : title}</h1>
 				)}
 	        </div>
 	    </div>

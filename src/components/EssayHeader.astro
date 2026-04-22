@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/base';
+
 interface Props {
 	authorSlug: string;
 	byline: string;
@@ -23,7 +25,7 @@ const {
 		{title}
 	</h1>
 	<p class="byline">
-		<a href={`/contributors#${authorSlug}`}>{byline}</a>
+		<a href={withBase(`/contributors#${authorSlug}`)}>{byline}</a>
 	</p>
 </div>
 

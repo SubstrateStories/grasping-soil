@@ -1,5 +1,6 @@
 ---
 import UnitLayout from '../../layouts/UnitLayout.astro';
+import { withBase } from '../../lib/base';
 
 import FormattedText from '../../components/FormattedText.astro';
 import PageBlock from '../../components/PageBlock.astro';
@@ -114,7 +115,7 @@ const title = "Soil as Archive";
                 headline="Activity: Creating Soil Monoliths"
             >
                 <ImageBlock>
-                    <img src="/images/unit-2/illustrated-monolith.jpg" alt="Illustration of a section view of a soil monolith" />
+                    <img src={withBase('/images/unit-2/illustrated-monolith.jpg')} alt="Illustration of a section view of a soil monolith" />
                 </ImageBlock>
                 <FormattedText unit={number}>
                     <p>
@@ -283,7 +284,7 @@ const title = "Soil as Archive";
                     </li>
                 </MediaList>
                 <div class="inline-image">
-                    <img src="/images/unit-2/fraxinus.jpeg" alt="Fraxinus specimen with annotations" />
+                    <img src={withBase('/images/unit-2/fraxinus.jpeg')} alt="Fraxinus specimen with annotations" />
                 </div>
             </FormattedText>
         </UnitDay>

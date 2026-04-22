@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/base';
+
 const {
 	fullImage,
 	fullWidth,
@@ -11,8 +13,8 @@ const {
 
 <div class="image-block">
 	<img
-		src={`/images/essays${fullImage}`}
-		srcset={smallImage && smallWidth && fullWidth ? `/images/essays${smallImage} ${smallWidth}w, /images/essays${fullImage} ${fullWidth}w` : undefined}
+		src={withBase(`/images/essays${fullImage}`)}
+		srcset={smallImage && smallWidth && fullWidth ? `${withBase(`/images/essays${smallImage}`)} ${smallWidth}w, ${withBase(`/images/essays${fullImage}`)} ${fullWidth}w` : undefined}
 		width={fullWidth}
 		height={fullHeight}
 		alt={alt}

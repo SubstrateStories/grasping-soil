@@ -1,5 +1,6 @@
 ---
 import UnitLayout from '../../layouts/UnitLayout.astro';
+import { withBase } from '../../lib/base';
 
 import ActivityBlock from '../../components/ActivityBlock.astro';
 import FormattedText from '../../components/FormattedText.astro';
@@ -55,7 +56,7 @@ const title = "Soil as Health";
                 and culturally constructed judgement of soil that is never without debate. This unit aims to construct a more nuanced conversation
                 about how human health and soil health have been intertwined at different historical moments. We argue that societies have defined
                 and intervened in soil health in a variety of ways and that we are now living out the legacies of these various definitions. The
-                unit starts by considering how we evaluate soil, building on some of the readings and exercises from <a href="/units/1-soil-as-substrate">Unit 1</a>. We then
+                unit starts by considering how we evaluate soil, building on some of the readings and exercises from <a href={withBase('/units/1-soil-as-substrate')}>Unit 1</a>. We then
                 look at how humans intervene to change soil health, and how soil health changes human health. The final day considers how soil is often seen as a
                 reflection not just of individual bodies, but of the body politic, mirroring some of the topics discussed in the fourth and final unit
                 on soil and belonging.
@@ -106,7 +107,7 @@ const title = "Soil as Health";
                         It is often considered the worst man-made ecological disaster in American history.
                     </p>
                     <p>
-                        Read the <a href="/resources/excerpt-of-letter-of-caroline-henderson-oklahoma-farmer">excerpt</a> from the letter of
+                        Read the <a href={withBase('/resources/excerpt-of-letter-of-caroline-henderson-oklahoma-farmer')}>excerpt</a> from the letter of
                         <a href="https://www.theatlantic.com/magazine/archive/1936/05/letters-from-the-dust-bowl/308897/" target="_blank" rel="noopener noreferrer">Caroline A. Henderson, a farmer in Oklahoma</a>,
                         to her friend in Maryland during the dust bowl, from 30 June 1935. Consider the following questions:
                     </p>
@@ -235,7 +236,7 @@ const title = "Soil as Health";
                     For example, farmers in Pare, Tanzania use pesticides and agrochemicals to treat infertile soil in the rice
                     farms while natural manure is used outside the project for ginger farming. The demands of the crops and the
                     history of those crops command different ways of caring for the soil as well as for the crops, and thus different
-                    relationships between different farmers and soil emerge. For more on farmers in Pare and their chemical regimes, read Lulu Tessua’s <a href="/essays/knowing-soil-as-a-living-thing-treating-it-as-a-living-body">essay</a>.
+                    relationships between different farmers and soil emerge. For more on farmers in Pare and their chemical regimes, read Lulu Tessua’s <a href={withBase('/essays/knowing-soil-as-a-living-thing-treating-it-as-a-living-body')}>essay</a>.
                 </p>
                 <UnitQuestions
                         unit={number}
@@ -320,9 +321,9 @@ const title = "Soil as Health";
                             New Books Network Podcast: <a href="https://newbooksnetwork.com/glyphosate-and-the-swirl" target="_blank" rel="noopener noreferrer">Vincanne Adams, “Glyphosate and the Swirl: An Agroindustrial Chemical on the Move”</a>
                         </li>
                         <li>
-                            See essays by <a href="/essays/arsenic-cycles-through-racism-and-empire">Jayson Porter</a>,
-                            <a href="/essays/knowing-soil-as-a-living-thing-treating-it-as-a-living-body">Lulu Tessua</a>,
-                            and <a href="/essays/the-fertility-of-the-soil-is-in-your-hand">Tamar Novick</a>
+                            See essays by <a href={withBase('/essays/arsenic-cycles-through-racism-and-empire')}>Jayson Porter</a>,
+                            <a href={withBase('/essays/knowing-soil-as-a-living-thing-treating-it-as-a-living-body')}>Lulu Tessua</a>,
+                            and <a href={withBase('/essays/the-fertility-of-the-soil-is-in-your-hand')}>Tamar Novick</a>
                         </li>
                         <li>
                             This podcast from the University of Minnesota Extension office looks at the role of nitrogen in
@@ -459,7 +460,7 @@ const title = "Soil as Health";
                             Listen: “<a href="https://www.thisamericanlife.org/404/enemy-camp-2010/act-three-0" target="_blank" rel="noopener noreferrer">As The Worm Turns</a>,” This American Life
                         </li>
                         <li>
-                            See also Emily Brownell’s <a href="/essays/building-roads-counting-worms">essay</a>
+                            See also Emily Brownell’s <a href={withBase('/essays/building-roads-counting-worms')}>essay</a>
                         </li>
                     </MediaList>
                     <p>

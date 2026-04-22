@@ -1,6 +1,7 @@
 ---
 import PageWrapper from '../components/PageWrapper.astro';
 import HamburgerMenu from '../components/HamburgerMenu.svelte';
+import { withBase } from '../lib/base';
 
 interface Props {
 	title: string;
@@ -13,6 +14,22 @@ const {
 	specialLayout,
 	suppressFooter,
 } = Astro.props;
+
+const fontsBase = withBase('/fonts');
+const fontFaces = `
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebExtraLight/SeravekWebExtraLight.woff2') format('woff2'), url('${fontsBase}/SeravekWebExtraLight/SeravekWebExtraLight.woff') format('woff'); font-weight: 200; font-style: normal; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebExtraLightItalic/SeravekWebExtraLightItalic.woff2') format('woff2'), url('${fontsBase}/SeravekWebExtraLightItalic/SeravekWebExtraLightItalic.woff') format('woff'); font-weight: 200; font-style: italic; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebLight/SeravekWebLight.woff2') format('woff2'), url('${fontsBase}/SeravekWebLight/SeravekWebLight.woff') format('woff'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebLightItalic/SeravekWebLightItalic.woff2') format('woff2'), url('${fontsBase}/SeravekWebLightItalic/SeravekWebLightItalic.woff') format('woff'); font-weight: 300; font-style: italic; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebRegular/SeravekWebRegular.woff2') format('woff2'), url('${fontsBase}/SeravekWebRegular/SeravekWebRegular.woff') format('woff'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebRegularItalic/SeravekWebRegularItalic.woff2') format('woff2'), url('${fontsBase}/SeravekWebRegularItalic/SeravekWebRegularItalic.woff') format('woff'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebMedium/SeravekWebMedium.woff2') format('woff2'), url('${fontsBase}/SeravekWebMedium/SeravekWebMedium.woff') format('woff'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebMediumItalic/SeravekWebMediumItalic.woff2') format('woff2'), url('${fontsBase}/SeravekWebMediumItalic/SeravekWebMediumItalic.woff') format('woff'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebBold/SeravekWebBold.woff2') format('woff2'), url('${fontsBase}/SeravekWebBold/SeravekWebBold.woff') format('woff'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'SeravekWeb'; src: url('${fontsBase}/SeravekWebBoldItalic/SeravekWebBoldItalic.woff2') format('woff2'), url('${fontsBase}/SeravekWebBoldItalic/SeravekWebBoldItalic.woff') format('woff'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'Paix'; src: url('${fontsBase}/paix-webfont.woff2') format('woff2'), url('${fontsBase}/paix-webfont.woff') format('woff'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Ocotillo'; src: url('${fontsBase}/ocotilloshadow-webfont.woff2') format('woff2'), url('${fontsBase}/ocotilloshadow-webfont.woff') format('woff'); font-weight: 100; font-style: normal; }
+`;
 ---
 
 <!doctype html>
@@ -20,11 +37,12 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" type="image/png" href={withBase('/favicon-96x96.png')} sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+		<link rel="shortcut icon" href={withBase('/favicon.ico')} />
+		<link rel="apple-touch-icon" sizes="180x180" href={withBase('/apple-touch-icon.png')} />
+		<link rel="manifest" href={withBase('/site.webmanifest')} />
+		<style is:inline set:html={fontFaces}></style>
 		<meta name="generator" content={Astro.generator} />
 		{title ? (
 			<title>{title} | Grasping Soil</title>
@@ -46,12 +64,12 @@ const {
 								<div>
 									<ul class="primary">
 										<li>
-											<a href="/syllabus">Syllabus</a>
+											<a href={withBase('/syllabus')}>Syllabus</a>
 											<ul>
-												<li><a href="/units/1-soil-as-substrate">1. Soil as Substrate</a></li>
-												<li><a href="/units/2-soil-as-archive">2. Soil as Archive</a></li>
-												<li><a href="/units/3-soil-as-health">3. Soil as Health</a></li>
-												<li><a href="/units/4-soil-as-belonging">4. Soil as Belonging</a></li>
+												<li><a href={withBase('/units/1-soil-as-substrate')}>1. Soil as Substrate</a></li>
+												<li><a href={withBase('/units/2-soil-as-archive')}>2. Soil as Archive</a></li>
+												<li><a href={withBase('/units/3-soil-as-health')}>3. Soil as Health</a></li>
+												<li><a href={withBase('/units/4-soil-as-belonging')}>4. Soil as Belonging</a></li>
 											</ul>
 										</li>
 									</ul>
@@ -59,16 +77,16 @@ const {
 								<div>
 									<ul class="primary">
 										<li>
-											<a href="/essays">Essays</a>
+											<a href={withBase('/essays')}>Essays</a>
 										</li>
 										<li>
-											<a href="/contributors">Contributors</a>
+											<a href={withBase('/contributors')}>Contributors</a>
 										</li>
 									</ul>
 								</div>
 							</div>
 							<div class="right-side">
-								<div>&copy; {(new Date()).getFullYear()} / <a href="/colophon">Colophon</a></div>
+								<div>&copy; {(new Date()).getFullYear()} / <a href={withBase('/colophon')}>Colophon</a></div>
 							</div>
 						</div>
 					</footer>
@@ -78,112 +96,6 @@ const {
 	</body>
 </html>
 <style is:global>
-/* Seravek Web Extra Light */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebExtraLight/SeravekWebExtraLight.woff2') format('woff2'),
-	url('/fonts/SeravekWebExtraLight/SeravekWebExtraLight.woff') format('woff');
-	font-weight: 200;
-	font-style: normal;
-}
-
-/* Seravek Web Extra Light Italic */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebExtraLightItalic/SeravekWebExtraLightItalic.woff2') format('woff2'),
-	url('/fonts/SeravekWebExtraLightItalic/SeravekWebExtraLightItalic.woff') format('woff');
-	font-weight: 200;
-	font-style: italic;
-}
-
-/* Seravek Web Light */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebLight/SeravekWebLight.woff2') format('woff2'),
-	url('/fonts/SeravekWebLight/SeravekWebLight.woff') format('woff');
-	font-weight: 300;
-	font-style: normal;
-}
-
-/* Seravek Web Light Italic */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebLightItalic/SeravekWebLightItalic.woff2') format('woff2'),
-	url('/fonts/SeravekWebLightItalic/SeravekWebLightItalic.woff') format('woff');
-	font-weight: 300;
-	font-style: italic;
-}
-
-/* Seravek Web Regular */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebRegular/SeravekWebRegular.woff2') format('woff2'),
-	url('/fonts/SeravekWebRegular/SeravekWebRegular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-}
-
-/* Seravek Web Regular Italic */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebRegularItalic/SeravekWebRegularItalic.woff2') format('woff2'),
-	url('/fonts/SeravekWebRegularItalic/SeravekWebRegularItalic.woff') format('woff');
-	font-weight: 400;
-	font-style: italic;
-}
-
-/* Seravek Web Medium */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebMedium/SeravekWebMedium.woff2') format('woff2'),
-	url('/fonts/SeravekWebMedium/SeravekWebMedium.woff') format('woff');
-	font-weight: 600;
-	font-style: normal;
-}
-
-/* Seravek Web Medium Italic */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebMediumItalic/SeravekWebMediumItalic.woff2') format('woff2'),
-	url('/fonts/SeravekWebMediumItalic/SeravekWebMediumItalic.woff') format('woff');
-	font-weight: 600;
-	font-style: italic;
-}
-
-/* Seravek Web Bold */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebBold/SeravekWebBold.woff2') format('woff2'),
-	url('/fonts/SeravekWebBold/SeravekWebBold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-}
-
-/* Seravek Web Bold Italic */
-@font-face {
-	font-family: 'SeravekWeb';
-	src: url('/fonts/SeravekWebBoldItalic/SeravekWebBoldItalic.woff2') format('woff2'),
-	url('/fonts/SeravekWebBoldItalic/SeravekWebBoldItalic.woff') format('woff');
-	font-weight: 700;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Paix';
-	src: url('/fonts/paix-webfont.woff2') format('woff2'),
-	url('/fonts/paix-webfont.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Ocotillo';
-	src: url('/fonts/ocotilloshadow-webfont.woff2') format('woff2'),
-	url('/fonts/ocotilloshadow-webfont.woff') format('woff');
-	font-weight: 100;
-	font-style: normal;
-}
-
 :root {
 	--max-content-width: 1280px;
 	--max-page-width: 960px;

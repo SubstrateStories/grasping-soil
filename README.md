@@ -1,1 +1,1 @@
-# WIP website for Grasping Soil workshop
+# Website for Grasping Soil syllabus and essay collection

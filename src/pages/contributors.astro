@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import LongFormContent from "../components/LongFormContent.astro";
 import PageContent from "../components/PageContent.astro";
 import PageHeader from "../components/PageHeader.astro";
+import { withBase } from "../lib/base";
 ---
 
 <Layout title="Contributors">
@@ -97,10 +98,10 @@ import PageHeader from "../components/PageHeader.astro";
 
 			<div class="logos-block">
 				<div class="logo">
-					<img src="/images/logos/image001.png" alt="Arts and Humanities Research Council" />
+					<img src={withBase('/images/logos/image001.png')} alt="Arts and Humanities Research Council" />
 				</div>
 				<div class="logo">
-					<img src="/images/logos/MPI_WG_wide_E_grey.png" alt="Max Planck Institute for the History of Science" />
+					<img src={withBase('/images/logos/MPI_WG_wide_E_grey.png')} alt="Max Planck Institute for the History of Science" />
 				</div>
 			</div>
 		</PageContent>

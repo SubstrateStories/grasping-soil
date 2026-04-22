@@ -1,6 +1,9 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
     import { fade } from 'svelte/transition';
+    import { withBase } from '../lib/base';
+
+    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     let hamburgerSvg;
     let navVisible = false;
@@ -28,7 +31,11 @@
     onMount(() => {
         import("../assets/hamburger.svg?raw").then(result => hamburgerSvg = result.default);
         if (typeof window !== 'undefined') {
-            currentPath = window.location.pathname;
+            let pathname = window.location.pathname;
+            if (basePath && pathname.startsWith(basePath)) {
+                pathname = pathname.slice(basePath.length) || '/';
+            }
+            currentPath = pathname;
             window.addEventListener('keydown', handleEscape);
         }
     });
@@ -50,16 +57,16 @@
     <div class="nav-overlay" transition:fade={{ duration: 200 }}>
         <ul class="top-level">
             <li>
-                <a href="/syllabus" class:active={isActivePath('/syllabus')}>Syllabus</a>
+                <a href={withBase('/syllabus')} class:active={isActivePath('/syllabus')}>Syllabus</a>
                 <ul class="unit-list">
-                    <li><a href="/units/1-soil-as-substrate" class:active={isActivePath('/units/1-soil-as-substrate')}>Soil as Substrate</a></li>
-                    <li><a href="/units/2-soil-as-archive" class:active={isActivePath('/units/2-soil-as-archive')}>Soil as Archive</a></li>
-                    <li><a href="/units/3-soil-as-health" class:active={isActivePath('/units/3-soil-as-health')}>Soil as Health</a></li>
-                    <li><a href="/units/4-soil-as-belonging" class:active={isActivePath('/units/4-soil-as-belonging')}>Soil as Belonging</a></li>
+                    <li><a href={withBase('/units/1-soil-as-substrate')} class:active={isActivePath('/units/1-soil-as-substrate')}>Soil as Substrate</a></li>
+                    <li><a href={withBase('/units/2-soil-as-archive')} class:active={isActivePath('/units/2-soil-as-archive')}>Soil as Archive</a></li>
+                    <li><a href={withBase('/units/3-soil-as-health')} class:active={isActivePath('/units/3-soil-as-health')}>Soil as Health</a></li>
+                    <li><a href={withBase('/units/4-soil-as-belonging')} class:active={isActivePath('/units/4-soil-as-belonging')}>Soil as Belonging</a></li>
                 </ul>
             </li>
-            <li><a href="/essays" class:active={isActivePath('/essays')}>Essays</a></li>
-            <li><a href="/contributors" class:active={isActivePath('/contributors')}>Contributors</a></li>
+            <li><a href={withBase('/essays')} class:active={isActivePath('/essays')}>Essays</a></li>
+            <li><a href={withBase('/contributors')} class:active={isActivePath('/contributors')}>Contributors</a></li>
         </ul>
     </div>
 {/if}
