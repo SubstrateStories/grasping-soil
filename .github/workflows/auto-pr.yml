@@ -12,7 +12,7 @@ jobs:
   open-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: |
           # Check if an open PR already exists
           EXISTING=$(gh pr list --head content --base main --state open --json number --jq '.[0].number')
